@@ -1,14 +1,14 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{values.app_full_name}}
-  description: ${{values.description}}
+  name: ${{values.app_full_name | dump}}
+  description: ${{values.description | dump}}
   annotations:
-    github.com/project-slug: '${{ values.storePath }}'
+    github.com/project-slug: '${{values.storePath | dump}}'
   tags:
     - library
-    - ${{values.app_full_name}}
+    - ${{values.app_full_name | dump}}
 spec:
   type: library
   lifecycle: experimental
-  owner: ${{values.owner}}
+  owner: ${{values.owner | dump}}
